@@ -84,6 +84,8 @@ class DataSource(ABC):
         pass
 
     # Currently Unused this is an example of how to create an ip address node from the data in a deeply nested dictionary.
+    #this will expect a dictionary of ip fields and their types and a connection node 
+    #the ip_field is a string delimited by a period to represent the path to the ip address in the dictionary
     def create_or_update_ip_address(self, data, ip_fields, server_node):
         for ip_field, ip_type in ip_fields.items():
             ip_address = self.safe_get(data, *ip_field.split("."))
